@@ -1,73 +1,85 @@
 :root {
-  --bg: #232323;
-  --bg-alt: #17181a;
-  --card: #1e1f22;
-  --txt: #e8e8ea;
-  --primary: rgba(227, 20, 20, 1); /* vermelho */
-  --primary-600: #b80f0f;
-  --accent: #3ad07b; /* verde para sucesso/whatsapp */
-  --radius: 18px;
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    --bg: #232323;
+    --bg-alt: #17181a;
+    --card: #1e1f22;
+    --txt: #e8e8ea;
+    --primary: #c00000;
+    --primary-hover: #b10303ff;
+    --accent: #25d366;
+    --radius: 18px;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 body {
-  margin: 0;
-  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial,
-    sans-serif;
-  color: var(--txt);
-  background: var(--bg);
-  line-height: 1.6;
+    font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color: var(--txt);
+    background: var(--bg);
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
 /* Header */
 .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: #d40001;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--primary);
+    box-shadow: var(--shadow);
 }
 .header-inner {
-  display: flex;
-  align-items: center; /* alinha verticalmente no centro */
-  justify-content: flex-start; /* coloca logo e menu juntos no início */
-  height: 90px; /* aumenta um pouco a altura do header */
-  gap: 10px; /* define espaço entre logo e menu */
-  padding-left: 100px; /* respiro da borda */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 90px;
+    gap: 2rem;
 }
 
 #logo {
-  width: 110px;
-  height: 80px;
+    width: 110px;
+    height: auto;
 }
 
 .passat {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.passat img {
+    width: 100%;
+    height: auto;
 }
 
 .nav ul {
-  display: flex;
-  list-style: none;
-  gap: 18px;
-  margin: 0;
-  padding: 0;
+    display: flex;
+    list-style: none;
+    gap: 1rem;
 }
 .nav-link {
-  color: var(--muted);
-  text-decoration: none;
-  padding: 10px 12px;
-  border-radius: 10px;
+    color: var(--txt);
+    font-weight: 700;
+    text-decoration: none;
+    padding: 10px 12px;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
 }
 .nav-link:hover,
 .nav-link.active {
-  color: #fff;
-  background: #b10303ff;
+    color: #fff;
+    background: var(--primary-hover);
 }
 
 .section-title {
@@ -76,25 +88,180 @@ body {
 
 /* WhatsApp Float */
 .whatsapp-float {
-  position: fixed;
-  right: 20px;
-  bottom: 22px;
-  width: 56px;
-  height: 56px;
-  display: grid;
-  place-items: center;
-  background: #25d366;
-  border-radius: 50%;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.45);
-  z-index: 1100;
+    position: fixed;
+    right: 20px;
+    bottom: 22px;
+    width: 56px;
+    height: 56px;
+    display: grid;
+    place-items: center;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: var(--shadow);
+    z-index: 1100;
+    transition: transform 0.2s ease;
 }
 .whatsapp-float img {
-  width: 28px;
-  height: 28px;
+    width: 28px;
+    height: 28px;
 }
 .whatsapp-float:hover {
-  transform: translateY(-2px);
+    transform: translateY(-4px);
 }
+
+/* =================== CÓDIGO CSS PARA OS CARDS ==================== */
+
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 2rem 1rem 4rem 1rem;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+.service-card {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    min-height: 280px;
+    background-color: var(--card);
+    overflow: hidden;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    align-items: stretch;
+}
+
+.service-info {
+    grid-column: 1 / 8;
+    grid-row: 1 / 2;
+    z-index: 2;
+    background-color: var(--primary);
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    clip-path: polygon(0 0, 85% 0, 100% 50%, 85% 100%, 0 100%);
+}
+
+.service-image {
+    grid-column: 5 / 11;
+    grid-row: 1 / 2;
+    z-index: 1;
+    background-size: cover;
+    background-position: center;
+}
+
+.service-card--reversed .service-info {
+    grid-column: 4 / 11;
+    clip-path: polygon(100% 0, 15% 0, 0 50%, 15% 100%, 100% 100%);
+    text-align: right;
+    padding-left: 0;
+    padding-right: 2.5rem;
+}
+
+.service-card--reversed .service-image {
+    grid-column: 1 / 7;
+}
+
+/* --- TEXTOS DOS CARDS --- */
+.service-info h3 {
+    font-size: 1.7rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--txt);
+    margin-bottom: 1rem;
+}
+.service-info p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--txt);
+    max-width: 90%;
+}
+
+.service-card--reversed .service-info p {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+/* --- IMAGENS DE FUNDO --- */
+.img-insulfilm { background-image: url('./img/insufilm.jpg'); }
+.img-polimento { background-image: url('./img/polimento.jpg'); }
+.img-envelopamento { background-image: url('./img/envelopamento.jpg'); }
+.img-higienizacao { background-image: url('./img/higiene.png'); }
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    .header-inner {
+        justify-content: center;
+    }
+    .nav {
+        display: none;
+    }
+
+    /* O card se torna um container de posicionamento */
+    .service-card, .service-card--reversed {
+        display: block;
+        position: relative;
+        padding-bottom: 180px; /* Espaço para a imagem que ficará no fundo */
+    }
+
+    /* A caixa de texto ocupa o espaço e tem altura automática */
+    .service-info, 
+    .service-card--reversed .service-info {
+        grid-column: auto;
+        grid-row: auto;
+        position: relative; /* Mantém no fluxo, mas com z-index */
+        z-index: 2;
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%); /* Polígono de volta */
+        padding: 2rem 1.5rem 3rem 1.5rem;
+        text-align: center;
+    }
+    
+    /* A imagem é posicionada absolutamente no fundo */
+    .service-image, .service-card--reversed .service-image {
+        grid-column: auto;
+        grid-row: auto;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 220px; /* Altura da área da imagem */
+        z-index: 1;
+        margin: 0;
+    }
+
+    .service-info p, 
+    .service-card--reversed .service-info p {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+}
+
+/* ==== ANIMAÇÕES DE SURGIMENTO CARDS === */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.service-card:nth-child(2).reveal { transition-delay: 0.1s; }
+.service-card:nth-child(3).reveal { transition-delay: 0.2s; }
+.service-card:nth-child(4).reveal { transition-delay: 0.3s; }
+.service-card:nth-child(5).reveal { transition-delay: 0.4s; }
 
 .map-card {
   max-width: 30%; 
