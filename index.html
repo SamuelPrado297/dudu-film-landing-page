@@ -5,40 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dudu Film - Estética Automotiva</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header + Navbar -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#home">
-        <img id="logo" src="./img/logo.png" alt="Dudu Film" />
-      </a>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="#home">
+                <img id="logo" src="./img/logo.png" alt="Dudu Film" />
+            </a>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#home" class="nav-link">Início</a></li>
+                    <li><a href="#polimento" class="nav-link">Polimento</a></li>
+                    <li><a href="#higienizacao" class="nav-link">Higienização</a></li>
+                    <li><a href="#insulfilm" class="nav-link">Insulfilm</a></li>
+                    <li><a href="#envelopamento" class="nav-link">Envelopamento</a></li>
+                    <li><a href="#contato" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-      <nav class="nav">
-        <ul>
-          <li><a href="#home" class="nav-link">Início</a></li>
-          <li><a href="#polimento" class="nav-link">Polimento</a></li>
-          <li><a href="#higienizacao" class="nav-link">Higienização</a></li>
-          <li><a href="#insulfilm" class="nav-link">Insulfilm</a></li>
-          <li><a href="#envelopamento" class="nav-link">Envelopamento</a></li>
-          <li><a href="#contato" class="nav-link">Contato</a></li>
-        </ul>
-      </nav>
+    <div id="home" class="passat">
+        <img src="./img/passatigtgrad2.png" alt="Estética Automotiva">
     </div>
-  </header>
+    <main class="cards-container">
+        <h2 class="section-title">Nossos Serviços</h2>
 
-  <div class="passat">
-    <img src="./img/passatigtgrad.png" alt="Estética Automotiva">
-  </div>
+        <article id="insulfilm" class="service-card reveal"> <div class="service-info">
+                <h3>Insulfilm</h3>
+                <p>Quer ter privacidade, se proteger do sol e ao mesmo tempo melhorar a estética do seu veículo? O insulfilm é perfeito para você.</p>
+            </div>
+            <div class="service-image img-insulfilm"></div>
+        </article>
 
-    <!-- Botão flutuante WhatsApp -->
-  <a
-    href="https://wa.me/5599999999999?text=Olá%20vim%20pelo%20site%20DUDUfilm%20e%20quero%20um%20orçamento."
-    class="whatsapp-float"
-    target="_blank" rel="noopener" aria-label="Conversar no WhatsApp"
-  >
-    <img src="icons/whatsapp.svg" alt="WhatsApp" />
-  </a>
+        <article id="polimento" class="service-card service-card--reversed reveal"> <div class="service-info">
+                <h3>Polimento</h3>
+                <p>A pintura do seu carro possui arranhões e está sem brilho? Faça um polimento conosco e deixe ele novo de novo.</p>
+            </div>
+            <div class="service-image img-polimento"></div>
+        </article>
+
+        <article id="envelopamento" class="service-card reveal"> <div class="service-info">
+                <h3>Envelopamento</h3>
+                <p>Quer colocar faixas, adesivos ou até envelopar o carro inteiro para evitar gastos com pintura? Visite-nos para fazer um envelopamento.</p>
+            </div>
+            <div class="service-image img-envelopamento"></div>
+        </article>
+
+        <article id="higienizacao" class="service-card service-card--reversed reveal"> <div class="service-info">
+                <h3>Higienização</h3>
+                <p>Seu carro está com cheiro ruim nos estofados, teto sujo ou até couros mal-tratados? Nós estamos aqui para higienizar o seu carro.</p>
+            </div>
+            <div class="service-image img-higienizacao"></div>
+        </article>
+    </main>
+    
+    <a
+        href="https://wa.me/5599999999999?text=Olá%20vim%20pelo%20site%20DUDUfilm%20e%20quero%20um%20orçamento."
+        class="whatsapp-float"
+        target="_blank" rel="noopener" aria-label="Conversar no WhatsApp"
+    >
+        <img src="icons/whatsapp.svg" alt="WhatsApp" />
+    </a>
 
     <script src="script.js"></script>
 </body>
