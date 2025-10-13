@@ -495,6 +495,14 @@ body.high-contrast {
   color: #fff !important;
 }
 
+#apresentacao-video {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
 body.high-contrast .site-header,
 body.high-contrast .service-info,
 body.high-contrast .nav.active,
