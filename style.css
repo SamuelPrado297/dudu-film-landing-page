@@ -166,3 +166,58 @@ body {
   height: 28px; /* O tamanho correto para os logos */
   width: auto;
 }
+
+footer {
+    background-color: #3a4151;
+    color: #ffffff;
+    padding: 5px 15px; 
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* ESSENCIAL: Joga os itens para as extremidades */
+    align-items: center;
+    
+}
+
+/* Estilo dos Links Sociais (lado esquerdo) */
+.social-links {
+    display: flex;
+    flex-direction: column; 
+    gap: 8px; 
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: #c0c0c0;
+}
+
+/* Estilo dos Ícones */
+.social-link i {
+    font-size: 1.5rem;
+    margin-right: 10px;
+    width: 25px;
+}
+
+.footer-logo img {
+    height: 40px; 
+    width: auto;
+    display: block;
+}
+
+@media (max-width: 600px) {
+  footer {
+
+    padding: 20px 25px;
+  }
+}
