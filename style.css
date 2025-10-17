@@ -44,7 +44,7 @@ body {
 .header-inner {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between; /* Alterado para space-between */
   height: 90px;
   gap: 2rem;
 }
@@ -108,6 +108,24 @@ body {
 }
 .whatsapp-float:hover {
   transform: translateY(-4px);
+}
+
+/* =================== VÍDEO DE APRESENTAÇÃO ==================== */
+#apresentacao-video {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  padding: 0 1rem; /* Adicionado padding para telas menores */
+}
+
+/* NOVO: Regra para o Iframe ser responsivo */
+#apresentacao-video iframe {
+  width: 100%; /* Ocupa 100% do container pai */
+  max-width: 800px; /* Limite de largura para desktop */
+  aspect-ratio: 16 / 9; /* Mantém a proporção de 16:9 */
+  border-radius: var(--radius); /* Borda arredondada */
 }
 
 /* =================== CÓDIGO CSS PARA OS CARDS ==================== */
@@ -207,62 +225,6 @@ body {
   background-image: url("./img/higiene.png");
 }
 
-/* --- RESPONSIVIDADE --- */
-@media (max-width: 768px) {
-  .header-inner {
-    justify-content: center;
-  }
-  .nav {
-    display: none;
-  }
-
-  /* O card se torna um container de posicionamento */
-  .service-card,
-  .service-card--reversed {
-    display: block;
-    position: relative;
-    padding-bottom: 180px; /* Espaço para a imagem que ficará no fundo */
-  }
-
-  /* A caixa de texto ocupa o espaço e tem altura automática */
-  .service-info,
-  .service-card--reversed .service-info {
-    grid-column: auto;
-    grid-row: auto;
-    position: relative; /* Mantém no fluxo, mas com z-index */
-    z-index: 2;
-    clip-path: polygon(
-      0 0,
-      100% 0,
-      100% 90%,
-      50% 100%,
-      0 90%
-    ); /* Polígono de volta */
-    padding: 2rem 1.5rem 3rem 1.5rem;
-    text-align: center;
-  }
-
-  /* A imagem é posicionada absolutamente no fundo */
-  .service-image,
-  .service-card--reversed .service-image {
-    grid-column: auto;
-    grid-row: auto;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 220px; /* Altura da área da imagem */
-    z-index: 1;
-    margin: 0;
-  }
-
-  .service-info p,
-  .service-card--reversed .service-info p {
-    max-width: 100%;
-    margin: 0 auto;
-  }
-}
-
 /* ==== ANIMAÇÕES DE SURGIMENTO CARDS === */
 .reveal {
   opacity: 0;
@@ -288,13 +250,15 @@ body {
   transition-delay: 0.4s;
 }
 
+
+/* =================== MAPA E LOCALIZAÇÃO ==================== */
 .map-card {
-  max-width: 30%;
-  margin-left: auto; /* Essas duas linhas centralizam o mapa */
-  margin-right: auto;
+  /* ATENÇÃO: max-width alterado para funcionar melhor como base */
+  max-width: 800px;
+  margin: 0 auto; /* Centraliza o mapa */
+  padding: 0 1rem; /* Adiciona padding lateral */
   border-radius: 4px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .map-card iframe {
@@ -302,18 +266,14 @@ body {
   width: 100%;
   height: 420px;
   border: 0;
-}
-
-.map-actions {
-  margin-top: 12px;
+  border-radius: var(--radius);
 }
 
 .location-image-container {
-  max-width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-
-  margin-top: 20px;
+  /* ATENÇÃO: max-width alterado */
+  max-width: 800px;
+  margin: 20px auto 0 auto; /* Espaçamento e centralização */
+  padding: 0 1rem;
 }
 
 .location-image-container img {
@@ -331,6 +291,8 @@ body {
   font-style: italic;
 }
 
+
+/* =================== PAGAMENTO ==================== */
 .payment-info {
   color: #ffffff;
   padding: 15px 20px;
@@ -340,24 +302,26 @@ body {
 }
 
 .payment-text {
-  margin: 0;
-  margin-bottom: 12px;
-  font-weight: bold;
-  font-size: 1.1em;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
 }
 
 .payment-logos {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
 }
 
 .payment-logo {
-  height: 28px; /* O tamanho correto para os logos */
+  height: 60px;
   width: auto;
 }
 
+
+/* =================== FOOTER ==================== */
 footer {
     background-color: #3a4151;
     color: #ffffff;
@@ -368,12 +332,13 @@ footer {
 
 .footer-container {
     display: flex;
-    justify-content: space-between; /* ESSENCIAL: Joga os itens para as extremidades */
+    justify-content: space-between;
     align-items: center;
-    
+    max-width: 1140px; /* Consistência */
+    margin: 0 auto; /* Consistência */
+    padding: 1rem; /* Consistência */
 }
 
-/* Estilo dos Links Sociais (lado esquerdo) */
 .social-links {
     display: flex;
     flex-direction: column; 
@@ -393,7 +358,6 @@ footer {
     color: #c0c0c0;
 }
 
-/* Estilo dos Ícones */
 .social-link i {
     font-size: 1.5rem;
     margin-right: 10px;
@@ -406,13 +370,8 @@ footer {
     display: block;
 }
 
-@media (max-width: 600px) {
-  footer {
 
-    padding: 20px 25px;
-  }
-}
-/* ===== MENU HAMBÚRGUER ===== */
+/* =================== MENU HAMBÚRGUER ==================== */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -432,7 +391,6 @@ footer {
   transition: all 0.3s ease;
 }
 
-/* Animação ao clicar */
 .hamburger.active span:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
 }
@@ -443,38 +401,8 @@ footer {
   transform: translateY(-8px) rotate(-45deg);
 }
 
-/* ===== RESPONSIVIDADE ===== */
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-    position: absolute;
-    right: 20px;
-  }
 
-  .nav {
-    display: none;
-    position: absolute;
-    top: 90px;
-    left: 0;
-    width: 100%;
-    background: var(--primary);
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 1.5rem 0;
-    box-shadow: var(--shadow);
-  }
-
-  .nav.active {
-    display: flex;
-  }
-
-  .nav ul {
-    flex-direction: column;
-    gap: 1rem;
-  }
-}
-
+/* =================== ACESSIBILIDADE ==================== */
 .accessibility-container {
   position: fixed;
   bottom: 90px;
@@ -512,7 +440,7 @@ footer {
 }
 
 .accessibility-menu {
-  display: none; /* O menu começa escondido */
+  display: none;
   flex-direction: column;
   gap: 8px;
   margin-bottom: 12px;
@@ -524,7 +452,7 @@ footer {
 }
 
 .accessibility-menu.active {
-  display: flex; /* Exibe o menu quando a classe 'active' é adicionada */
+  display: flex;
 }
 
 .accessibility-menu button {
@@ -549,14 +477,6 @@ body.high-contrast {
   color: #fff !important;
 }
 
-#apresentacao-video {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 40px;
-}
-
 body.high-contrast .site-header,
 body.high-contrast .service-info,
 body.high-contrast .nav.active,
@@ -577,4 +497,146 @@ body.high-contrast p,
 body.high-contrast .nav-link,
 body.high-contrast .payment-text {
   color: #fff !important;
+}
+
+/* =================== BOTÃO FALE CONOSCO ==================== */
+#fale-conosco {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0 50px 0;
+}
+
+#contato,
+#contato:link,
+#contato:visited {
+  display: inline-block;
+  background-color: var(--accent); 
+  color: #ffffff; 
+  font-weight: 900;
+  font-size: 1.4rem;
+  text-decoration: none; 
+  padding: 18px 45px;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#contato:hover {
+  background-color: #20b058;
+  transform: translateY(-3px);
+}
+
+
+/* ========================================================== */
+/* =================== RESPONSIVIDADE ======================= */
+/* ========================================================== */
+
+/* --- Telas médias como tablets (até 992px) --- */
+@media (max-width: 992px) {
+    .service-info {
+        clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
+    }
+    .service-card--reversed .service-info {
+        clip-path: polygon(100% 0, 10% 0, 0 50%, 10% 100%, 100% 100%);
+    }
+}
+
+/* --- Telas de tablets e celulares (até 768px) --- */
+@media (max-width: 768px) {
+  .header-inner {
+    justify-content: space-between;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+  
+  .nav {
+    display: none;
+    position: absolute;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    background: var(--primary);
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    box-shadow: var(--shadow);
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* --- Responsividade dos Títulos --- */
+  .section-title {
+    font-size: 2rem;
+  }
+  .payment-text {
+    font-size: 2rem;
+  }
+  
+  /* --- Responsividade dos Cards de Serviço --- */
+  .service-card,
+  .service-card--reversed {
+    display: block;
+    position: relative;
+    padding-bottom: 180px;
+  }
+
+  .service-info,
+  .service-card--reversed .service-info {
+    grid-column: auto;
+    grid-row: auto;
+    position: relative;
+    z-index: 2;
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 90%,
+      50% 100%,
+      0 90%
+    );
+    padding: 2rem 1.5rem 3rem 1.5rem;
+    text-align: center;
+  }
+
+  .service-image,
+  .service-card--reversed .service-image {
+    grid-column: auto;
+    grid-row: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 220px;
+    z-index: 1;
+    margin: 0;
+  }
+
+  .service-info p,
+  .service-card--reversed .service-info p {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+/* --- Telas menores de celular (até 600px) --- */
+@media (max-width: 600px) {
+  footer {
+    padding: 20px 25px;
+  }
+  .footer-container {
+      flex-direction: column;
+      gap: 1.5rem;
+  }
 }
