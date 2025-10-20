@@ -250,7 +250,6 @@ body {
   transition-delay: 0.4s;
 }
 
-
 /* =================== MAPA E LOCALIZAÇÃO ==================== */
 .map-card {
   /* ATENÇÃO: max-width alterado para funcionar melhor como base */
@@ -291,7 +290,6 @@ body {
   font-style: italic;
 }
 
-
 /* =================== PAGAMENTO ==================== */
 .payment-info {
   color: #ffffff;
@@ -320,56 +318,54 @@ body {
   width: auto;
 }
 
-
 /* =================== FOOTER ==================== */
 footer {
-    background-color: #3a4151;
-    color: #ffffff;
-    padding: 5px 15px; 
-    width: 100%;
-    box-sizing: border-box;
+  background-color: #3a4151;
+  color: #ffffff;
+  padding: 5px 15px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1140px; /* Consistência */
-    margin: 0 auto; /* Consistência */
-    padding: 1rem; /* Consistência */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1140px; /* Consistência */
+  margin: 0 auto; /* Consistência */
+  padding: 1rem; /* Consistência */
 }
 
 .social-links {
-    display: flex;
-    flex-direction: column; 
-    gap: 8px; 
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .social-link {
-    display: flex;
-    align-items: center;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
 }
 
 .social-link:hover {
-    color: #c0c0c0;
+  color: #c0c0c0;
 }
 
 .social-link i {
-    font-size: 1.5rem;
-    margin-right: 10px;
-    width: 25px;
+  font-size: 1.5rem;
+  margin-right: 10px;
+  width: 25px;
 }
 
 .footer-logo img {
-    height: 40px; 
-    width: auto;
-    display: block;
+  height: 65px;
+  width: auto;
+  display: block;
 }
-
 
 /* =================== MENU HAMBÚRGUER ==================== */
 .hamburger {
@@ -400,7 +396,6 @@ footer {
 .hamburger.active span:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
 }
-
 
 /* =================== ACESSIBILIDADE ==================== */
 .accessibility-container {
@@ -511,11 +506,11 @@ body.high-contrast .payment-text {
 #contato:link,
 #contato:visited {
   display: inline-block;
-  background-color: var(--accent); 
-  color: #ffffff; 
+  background-color: var(--accent);
+  color: #ffffff;
   font-weight: 900;
   font-size: 1.4rem;
-  text-decoration: none; 
+  text-decoration: none;
   padding: 18px 45px;
   border-radius: var(--radius);
   border: none;
@@ -529,19 +524,18 @@ body.high-contrast .payment-text {
   transform: translateY(-3px);
 }
 
-
 /* ========================================================== */
 /* =================== RESPONSIVIDADE ======================= */
 /* ========================================================== */
 
 /* --- Telas médias como tablets (até 992px) --- */
 @media (max-width: 992px) {
-    .service-info {
-        clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
-    }
-    .service-card--reversed .service-info {
-        clip-path: polygon(100% 0, 10% 0, 0 50%, 10% 100%, 100% 100%);
-    }
+  .service-info {
+    clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
+  }
+  .service-card--reversed .service-info {
+    clip-path: polygon(100% 0, 10% 0, 0 50%, 10% 100%, 100% 100%);
+  }
 }
 
 /* --- Telas de tablets e celulares (até 768px) --- */
@@ -553,7 +547,7 @@ body.high-contrast .payment-text {
   .hamburger {
     display: flex;
   }
-  
+
   .nav {
     display: none;
     position: absolute;
@@ -584,7 +578,7 @@ body.high-contrast .payment-text {
   .payment-text {
     font-size: 2rem;
   }
-  
+
   /* --- Responsividade dos Cards de Serviço --- */
   .service-card,
   .service-card--reversed {
@@ -599,13 +593,7 @@ body.high-contrast .payment-text {
     grid-row: auto;
     position: relative;
     z-index: 2;
-    clip-path: polygon(
-      0 0,
-      100% 0,
-      100% 90%,
-      50% 100%,
-      0 90%
-    );
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
     padding: 2rem 1.5rem 3rem 1.5rem;
     text-align: center;
   }
@@ -636,7 +624,7 @@ body.high-contrast .payment-text {
     padding: 20px 25px;
   }
   .footer-container {
-      flex-direction: column;
-      gap: 1.5rem;
+    flex-direction: column;
+    gap: 1.5rem;
   }
 }
